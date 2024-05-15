@@ -1,5 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
+import "reflect-metadata";
 import { StatusBar } from "expo-status-bar";
 import { Stack } from "expo-router";
 

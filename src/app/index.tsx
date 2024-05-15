@@ -2,9 +2,16 @@
 
 import { Stack, useRouter } from "expo-router";
 import { View, Text, StyleSheet, Button } from "react-native";
+import { useState } from "react";
+import { getContainer } from "../ioc/container";
+import { ProductsScreenPresenter } from "../presentation/ProductsScreen.presenter";
 
 export default function Root() {
   const router = useRouter();
+  const [presenter] = useState(() =>
+    getContainer().get(ProductsScreenPresenter),
+  );
+  console.log(presenter);
 
   return (
     <>
