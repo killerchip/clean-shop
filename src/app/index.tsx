@@ -11,7 +11,6 @@ export default function Root() {
   const [presenter] = useState(() =>
     getContainer().get(ProductsScreenPresenter),
   );
-  console.log(presenter);
 
   return (
     <>

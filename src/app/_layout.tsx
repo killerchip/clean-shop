@@ -1,6 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 import "reflect-metadata";
+import "../config/mobx";
 import { StatusBar } from "expo-status-bar";
 import { Stack } from "expo-router";
 
