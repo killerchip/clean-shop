@@ -11,8 +11,6 @@ export class ProductsStore {
 
   constructor(@inject(FakeShopApi) private _productsApi: IProductsApi) {
     makeAutoObservable(this);
-    // TODO this should be triggered by the presenter
-    this.fetchProducts().then();
   }
 
   async fetchProducts() {
