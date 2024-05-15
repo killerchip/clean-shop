@@ -5,8 +5,9 @@ import { View, Text, StyleSheet, Button } from "react-native";
 import { useState } from "react";
 import { getContainer } from "../ioc/container";
 import { ProductsScreenPresenter } from "../presentation/ProductsScreen.presenter";
+import { observer } from "mobx-react-lite";
 
-export default function Root() {
+export default observer(function Root() {
   const router = useRouter();
   const [presenter] = useState(() =>
     getContainer().get(ProductsScreenPresenter),
@@ -16,7 +17,7 @@ export default function Root() {
     <>
       <Stack.Screen options={{ title: "Products" }} />
       <View style={styles.container}>
-        <Text>Root page</Text>
+        <Text>{JSON.stringify(presenter.productsList, null, 2)}</Text>
         <Button
           title="Go"
           onPress={() =>
@@ -26,7 +27,7 @@ export default function Root() {
       </View>
     </>
   );
-}
+});
 
 const styles = StyleSheet.create({
   container: {
