@@ -4,13 +4,13 @@ import "reflect-metadata";
 import "../config/mobx";
 import { StatusBar } from "expo-status-bar";
 import { Stack } from "expo-router";
-import { PaperProvider } from "react-native-paper";
+import { AppThemeProvider } from "../config/theme/ThemeProvider";
 
 export default function RootLayout() {
   return (
-    <PaperProvider>
+    <AppThemeProvider>
       <Stack />
       <StatusBar style="auto" />
-    </PaperProvider>
+    </AppThemeProvider>
   );
 }
