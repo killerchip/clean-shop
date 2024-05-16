@@ -2,11 +2,15 @@ import { inject, injectable } from "inversify";
 import { ProductsStore } from "../domain/Products.store";
 import { runInAction } from "mobx";
 import { toProductListItem } from "./products.views";
+import { CartStore } from "../domain/Cart.store";
 
 @injectable()
 export class ProductsScreenPresenter {
   isFetching = false;
-  constructor(@inject(ProductsStore) private _productsStore: ProductsStore) {
+  constructor(
+    @inject(ProductsStore) private _productsStore: ProductsStore,
+    @inject(CartStore) private _cartStore: CartStore,
+  ) {
     this._productsStore.fetchProducts().then();
     this.loadProducts().then();
   }
@@ -26,5 +30,9 @@ export class ProductsScreenPresenter {
 
   get productsList() {
     return this._productsStore.products.map(toProductListItem);
+  }
+
+  get itemsInCart() {
+    return this._cartStore.items.length;
   }
 }

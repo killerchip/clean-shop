@@ -4,12 +4,17 @@ import { action, makeAutoObservable } from "mobx";
 import { Product } from "../domain/products.types";
 import { ProductDetails } from "./products.views";
 import { useNewDependency } from "../config/ioc/useDependency.react";
+import { CartStore } from "../domain/Cart.store";
 
 @injectable()
 export class ProductDetailsScreenPresenter {
   productId: Product["id"] = 0;
 
-  constructor(@inject(ProductsStore) private _productsStore: ProductsStore) {
+  // TODO create interfaces for these dependencies
+  constructor(
+    @inject(ProductsStore) private _productsStore: ProductsStore,
+    @inject(CartStore) private _cartStore: CartStore,
+  ) {
     makeAutoObservable(this);
   }
 
@@ -19,6 +24,18 @@ export class ProductDetailsScreenPresenter {
 
   get product(): ProductDetails | undefined {
     return this._productsStore.products.find((p) => p.id === this.productId);
+  }
+
+  addProductToCart() {
+    this._cartStore.addItem(this.product!);
+  }
+
+  get itemsInCart() {
+    return this._cartStore.items.length;
+  }
+
+  get displayAddToCartButton() {
+    return Boolean(this.product);
   }
 }
 

@@ -14,6 +14,7 @@ export default observer(function Root() {
     <>
       <Stack.Screen options={{ title: "Products" }} />
       <ScrollView style={styles.container}>
+        <Text>Items in Cart: {presenter.itemsInCart}</Text>
         {presenter.productsList.map((product) => {
           return (
             <Pressable
@@ -28,7 +29,6 @@ export default observer(function Root() {
             </Pressable>
           );
         })}
-        <Text>{JSON.stringify(presenter.productsList, null, 2)}</Text>
       </ScrollView>
     </>
   );
