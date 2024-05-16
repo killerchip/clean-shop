@@ -6,9 +6,11 @@ import { ProductsScreenPresenter } from "../../../presentation/ProductsScreen.pr
 import { FlashList, ListRenderItem } from "@shopify/flash-list";
 import { ProductListItem } from "../../../presentation/products.views";
 import { ProductListItemComponent } from "./ProductListItemComponent";
+import { CartIcon } from "../../components/CartIcon";
 
 export const ProductsScreen = observer(function Root() {
   const presenter = useNewDependency(ProductsScreenPresenter);
+  const { itemsInCart } = presenter;
 
   const renderItem: ListRenderItem<ProductListItem> = ({ item }) => {
     return <ProductListItemComponent product={item} />;
@@ -16,7 +18,12 @@ export const ProductsScreen = observer(function Root() {
 
   return (
     <>
-      <Stack.Screen options={{ title: "Products" }} />
+      <Stack.Screen
+        options={{
+          title: "Products",
+          headerRight: () => <CartIcon itemsNumber={itemsInCart} />,
+        }}
+      />
       <View style={styles.container}>
         <FlashList
           renderItem={renderItem}

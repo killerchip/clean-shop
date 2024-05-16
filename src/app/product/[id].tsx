@@ -1,4 +1,5 @@
 // noinspection JSUnusedGlobalSymbols
-import { ProductDetailsScreen } from "../../react/screens/ProductDetailsScreen";
+
+import { ProductDetailsScreen } from "../../react/ProductDetailsScreen/ProductDetailsScreen";
 
 export default ProductDetailsScreen;
