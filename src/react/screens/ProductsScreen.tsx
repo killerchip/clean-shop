@@ -1,6 +1,6 @@
 import { Pressable, ScrollView, StyleSheet } from "react-native";
 import { observer } from "mobx-react-lite";
-import { Text, Button } from "react-native-paper";
+import { Text } from "react-native-paper";
 import { Stack, useRouter } from "expo-router";
 import { useNewDependency } from "../../config/ioc/useDependency.react";
 import { ProductsScreenPresenter } from "../../presentation/ProductsScreen.presenter";
@@ -14,7 +14,6 @@ export const ProductsScreen = observer(function Root() {
       <Stack.Screen options={{ title: "Products" }} />
       <ScrollView style={styles.container}>
         <Text>Items in Cart: {presenter.itemsInCart}</Text>
-        <Button mode="contained">My Button</Button>
         {presenter.productsList.map((product) => {
           return (
             <Pressable
@@ -38,6 +37,5 @@ export const ProductsScreen = observer(function Root() {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
   },
 });

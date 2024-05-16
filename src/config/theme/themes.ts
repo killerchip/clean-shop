@@ -1,4 +1,9 @@
-import { MD3DarkTheme, MD3LightTheme } from "react-native-paper";
+import {
+  adaptNavigationTheme,
+  MD3DarkTheme,
+  MD3LightTheme,
+} from "react-native-paper";
+import { DefaultTheme } from "@react-navigation/native";
 
 // see : https://callstack.github.io/react-native-paper/docs/guides/theming
 const customLightColors = {
@@ -106,3 +111,11 @@ export const darkTheme = {
     ...customDarkColors.colors,
   },
 };
+
+export const { LightTheme: navLightTheme, DarkTheme: navDarkTheme } =
+  adaptNavigationTheme({
+    reactNavigationDark: DefaultTheme,
+    reactNavigationLight: DefaultTheme,
+    materialLight: lightTheme,
+    materialDark: darkTheme,
+  });
