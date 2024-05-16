@@ -12,6 +12,7 @@
     "pre-commit": "pre-commit"
   },
   "dependencies": {
+    "@shopify/flash-list": "1.6.4",
     "expo": "~51.0.6",
     "expo-constants": "~16.0.1",
     "expo-linking": "~6.3.1",

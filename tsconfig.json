@@ -2,10 +2,18 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
-    "lib": ["es6"],
-    "types": ["reflect-metadata"],
+    "lib": [
+      "es6"
+    ],
+    "types": [
+      "reflect-metadata"
+    ],
     "useDefineForClassFields": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
