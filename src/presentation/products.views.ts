@@ -9,3 +9,8 @@ export function toProductListItem(product: Product): ProductListItem {
     price: product.price,
   };
 }
+
+export type ProductDetails = Pick<
+  Product,
+  "id" | "image" | "title" | "price" | "description"
+>;
