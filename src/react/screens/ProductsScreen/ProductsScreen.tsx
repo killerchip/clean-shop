@@ -7,6 +7,7 @@ import { FlashList, ListRenderItem } from "@shopify/flash-list";
 import { ProductListItem } from "../../../presentation/products.views";
 import { ProductListItemComponent } from "./ProductListItemComponent";
 import { CartIcon } from "../../components/CartIcon";
+import { EmptyListComponent } from "./EmptyListComponent";
 
 export const ProductsScreen = observer(function Root() {
   const presenter = useNewDependency(ProductsScreenPresenter);
@@ -30,9 +31,10 @@ export const ProductsScreen = observer(function Root() {
         <FlashList
           renderItem={renderItem}
           data={presenter.productsList.slice()}
-          estimatedItemSize={40}
+          estimatedItemSize={200}
           refreshing={presenter.isFetching}
           onRefresh={onRefresh}
+          ListEmptyComponent={EmptyListComponent}
         />
       </View>
     </>
