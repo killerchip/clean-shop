@@ -1,6 +1,6 @@
 import { inject, injectable } from "inversify";
 import { ProductsStore } from "../domain/Products.store";
-import { runInAction } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 import { toProductListItem } from "./products.views";
 import { CartStore } from "../domain/Cart.store";
 
@@ -10,16 +10,19 @@ type ICartStore = Pick<CartStore, "items">;
 @injectable()
 export class ProductsScreenPresenter {
   isFetching = false;
+
   constructor(
     @inject(ProductsStore) private _productsStore: IProductStore,
     @inject(CartStore) private _cartStore: ICartStore,
   ) {
-    this._productsStore.fetchProducts().then();
+    makeAutoObservable(this);
     this.loadProducts().then();
   }
 
   async loadProducts() {
-    this.isFetching = true;
+    runInAction(() => {
+      this.isFetching = true;
+    });
 
     try {
       await this._productsStore.fetchProducts();

@@ -16,6 +16,8 @@ export const ProductsScreen = observer(function Root() {
     return <ProductListItemComponent product={item} />;
   };
 
+  const onRefresh = () => presenter.loadProducts();
+
   return (
     <>
       <Stack.Screen
@@ -27,8 +29,10 @@ export const ProductsScreen = observer(function Root() {
       <View style={styles.container}>
         <FlashList
           renderItem={renderItem}
-          data={presenter.productsList}
+          data={presenter.productsList.slice()}
           estimatedItemSize={40}
+          refreshing={presenter.isFetching}
+          onRefresh={onRefresh}
         />
       </View>
     </>
