@@ -6,14 +6,16 @@ import { ProductDetails } from "./products.views";
 import { useNewDependency } from "../config/ioc/useDependency.react";
 import { CartStore } from "../domain/Cart.store";
 
+type IProductStore = Pick<ProductsStore, "products">;
+type ICartStore = Pick<CartStore, "addItem" | "items">;
+
 @injectable()
 export class ProductDetailsScreenPresenter {
   productId: Product["id"] = 0;
 
-  // TODO create interfaces for these dependencies
   constructor(
-    @inject(ProductsStore) private _productsStore: ProductsStore,
-    @inject(CartStore) private _cartStore: CartStore,
+    @inject(ProductsStore) private _productsStore: IProductStore,
+    @inject(CartStore) private _cartStore: ICartStore,
   ) {
     makeAutoObservable(this);
   }

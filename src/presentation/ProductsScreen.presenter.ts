@@ -4,12 +4,15 @@ import { runInAction } from "mobx";
 import { toProductListItem } from "./products.views";
 import { CartStore } from "../domain/Cart.store";
 
+type IProductStore = Pick<ProductsStore, "products" | "fetchProducts">;
+type ICartStore = Pick<CartStore, "items">;
+
 @injectable()
 export class ProductsScreenPresenter {
   isFetching = false;
   constructor(
-    @inject(ProductsStore) private _productsStore: ProductsStore,
-    @inject(CartStore) private _cartStore: CartStore,
+    @inject(ProductsStore) private _productsStore: IProductStore,
+    @inject(CartStore) private _cartStore: ICartStore,
   ) {
     this._productsStore.fetchProducts().then();
     this.loadProducts().then();
