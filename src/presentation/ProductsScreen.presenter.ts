@@ -1,6 +1,7 @@
 import { inject, injectable } from "inversify";
 import { ProductsStore } from "../domain/Products.store";
 import { runInAction } from "mobx";
+import { toProductListItem } from "./products.views";
 
 @injectable()
 export class ProductsScreenPresenter {
@@ -20,14 +21,10 @@ export class ProductsScreenPresenter {
       runInAction(() => {
         this.isFetching = false;
       });
-      console.log("fetched");
     }
   }
 
   get productsList() {
-    return this._productsStore.products;
+    return this._productsStore.products.map(toProductListItem);
   }
 }
-
-// TODO: presenter should hold only the View model
-// TODO: define the view model

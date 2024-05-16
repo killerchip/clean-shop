@@ -1,30 +1,35 @@
 // noinspection JSUnusedGlobalSymbols
 
 import { Stack, useRouter } from "expo-router";
-import { View, Text, StyleSheet, Button } from "react-native";
-import { useState } from "react";
-import { getContainer } from "../config/ioc/container";
-import { ProductsScreenPresenter } from "../presentation/ProductsScreen.presenter";
+import { Text, StyleSheet, ScrollView, Pressable } from "react-native";
 import { observer } from "mobx-react-lite";
+import { useNewDependency } from "../config/ioc/useDependency.react";
+import { ProductsScreenPresenter } from "../presentation/ProductsScreen.presenter";
 
 export default observer(function Root() {
   const router = useRouter();
-  const [presenter] = useState(() =>
-    getContainer().get(ProductsScreenPresenter),
-  );
+  const presenter = useNewDependency(ProductsScreenPresenter);
 
   return (
     <>
       <Stack.Screen options={{ title: "Products" }} />
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
+        {presenter.productsList.map((product) => {
+          return (
+            <Pressable
+              onPress={() =>
+                router.push({
+                  pathname: "/product/[id]",
+                  params: { id: product.id },
+                })
+              }
+            >
+              <Text key={product.id}>{product.title}</Text>
+            </Pressable>
+          );
+        })}
         <Text>{JSON.stringify(presenter.productsList, null, 2)}</Text>
-        <Button
-          title="Go"
-          onPress={() =>
-            router.push({ pathname: "/product/[id]", params: { id: "007" } })
-          }
-        />
-      </View>
+      </ScrollView>
     </>
   );
 });
