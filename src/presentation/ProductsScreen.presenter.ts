@@ -12,6 +12,7 @@ export class ProductsScreenPresenter {
 
   async loadProducts() {
     this.isFetching = true;
+
     try {
       await this._productsStore.fetchProducts();
     } finally {
@@ -19,6 +20,7 @@ export class ProductsScreenPresenter {
       runInAction(() => {
         this.isFetching = false;
       });
+      console.log("fetched");
     }
   }
 
@@ -26,3 +28,6 @@ export class ProductsScreenPresenter {
     return this._productsStore.products;
   }
 }
+
+// TODO: presenter should hold only the View model
+// TODO: define the view model

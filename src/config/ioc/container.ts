@@ -1,6 +1,6 @@
 import { Container } from "inversify";
-import { FakeShopApi } from "../dto/FakeShopApi";
-import { ProductsStore } from "../domain/Products.store";
+import { FakeShopApi } from "../../dto/FakeShopApi";
+import { ProductsStore } from "../../domain/Products.store";
 
 const container = new Container({
   autoBindInjectable: true,

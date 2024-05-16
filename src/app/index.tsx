@@ -3,7 +3,7 @@
 import { Stack, useRouter } from "expo-router";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { useState } from "react";
-import { getContainer } from "../ioc/container";
+import { getContainer } from "../config/ioc/container";
 import { ProductsScreenPresenter } from "../presentation/ProductsScreen.presenter";
 import { observer } from "mobx-react-lite";
 

@@ -6,7 +6,7 @@ export type ProductDto = {
   price: number;
   description: string;
   category: string;
-  image: string;
+  images: string[];
 };
 
 export function toProduct(data: ProductDto): Product {
@@ -15,6 +15,6 @@ export function toProduct(data: ProductDto): Product {
     title: data.title,
     price: data.price,
     description: data.description,
-    image: data.image,
+    image: data.images[0],
   };
 }
