@@ -32,7 +32,7 @@ export const ProductsScreen = observer(function Root() {
         <FlashList
           renderItem={renderItem}
           data={presenter.productsList.slice()}
-          estimatedItemSize={200}
+          estimatedItemSize={282}
           refreshing={presenter.isFetching}
           onRefresh={onRefresh}
           ListEmptyComponent={EmptyListComponent}

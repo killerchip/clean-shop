@@ -24,6 +24,7 @@ export const ProductDetailsScreen = observer(function ProductsDetailsScreen() {
       <Stack.Screen
         options={{
           title: product?.title,
+          headerBackTitleVisible: false,
           headerRight: () => <CartIcon itemsNumber={itemsInCart} />,
         }}
       />
