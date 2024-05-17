@@ -3,8 +3,11 @@
 import "reflect-metadata";
 import "../config/mobx";
 import { StatusBar } from "expo-status-bar";
-import { Stack } from "expo-router";
 import { AppThemeProvider } from "../config/theme/ThemeProvider";
+import { RootErrorBoundary } from "../react/components/ErrorBoundary";
+import { Stack } from "expo-router";
+
+export const ErrorBoundary = RootErrorBoundary;
 
 export default function RootLayout() {
   return (
