@@ -7,11 +7,13 @@ import { ErrorReportingService } from "../services/ErrorReportingService";
 
 import { Injectables } from "../config/ioc/injectables";
 
+type IErrorReportingService = Pick<ErrorReportingService, "reportError">;
+
 @injectable()
 export class ShopApi {
   constructor(
     @inject(ErrorReportingService)
-    private _errorReportingService: ErrorReportingService,
+    private _errorReportingService: IErrorReportingService,
     @inject(Injectables.HttpClient) private _httpClient: typeof Axios,
   ) {}
 
