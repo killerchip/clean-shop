@@ -1,13 +1,9 @@
 import { ProductListItem } from "../../../presentation/products.views";
-import { Card } from "react-native-paper";
-import {
-  Pressable,
-  StyleProp,
-  StyleSheet,
-  Text,
-  ViewStyle,
-} from "react-native";
+import { Card, MD3Theme, withTheme } from "react-native-paper";
+import { Pressable, StyleProp, ViewStyle } from "react-native";
 import { useRouter } from "expo-router";
+import { PriceTag } from "../../components/PriceTags";
+import styled from "styled-components/native";
 
 type Props = {
   product: ProductListItem;
@@ -26,26 +22,22 @@ export const ProductListItemComponent = function ProductListItem({
 
   return (
     <Pressable onPress={onPress}>
-      <Card style={[styles.container, style]}>
+      <ListItemCard>
         <Card.Cover source={{ uri: product.image }} />
         <Card.Title title={product.title} titleVariant="titleLarge" />
-        <Card.Content style={styles.content}>
-          <Text>${product.price}</Text>
-        </Card.Content>
-      </Card>
+        <ListItemContent>
+          <PriceTag>${product.price}</PriceTag>
+        </ListItemContent>
+      </ListItemCard>
     </Pressable>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    margin: 4,
-  },
-  title: {
-    fontSize: 16,
-  },
-  content: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
-  },
-});
+const ListItemCard = withTheme(styled(Card)<{ theme: MD3Theme }>`
+  margin: 4px;
+`);
+
+const ListItemContent = withTheme(styled(Card.Content)<{ theme: MD3Theme }>`
+  flex-direction: row;
+  justify-content: flex-end;
+`);

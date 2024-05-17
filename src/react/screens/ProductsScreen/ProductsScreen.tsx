@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { observer } from "mobx-react-lite";
 import { Stack } from "expo-router";
 import { useNewDependency } from "../../../config/ioc/useDependency.react";
@@ -8,6 +8,7 @@ import { ProductListItem } from "../../../presentation/products.views";
 import { ProductListItemComponent } from "./ProductListItemComponent";
 import { CartIcon } from "../../components/CartIcon";
 import { EmptyListComponent } from "./EmptyListComponent";
+import styled from "styled-components/native";
 
 export const ProductsScreen = observer(function Root() {
   const presenter = useNewDependency(ProductsScreenPresenter);
@@ -27,7 +28,7 @@ export const ProductsScreen = observer(function Root() {
           headerRight: () => <CartIcon itemsNumber={itemsInCart} />,
         }}
       />
-      <View style={styles.container}>
+      <Container>
         <FlashList
           renderItem={renderItem}
           data={presenter.productsList.slice()}
@@ -36,13 +37,11 @@ export const ProductsScreen = observer(function Root() {
           onRefresh={onRefresh}
           ListEmptyComponent={EmptyListComponent}
         />
-      </View>
+      </Container>
     </>
   );
 });
 
-export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+const Container = styled(View)`
+  flex: 1;
+`;
