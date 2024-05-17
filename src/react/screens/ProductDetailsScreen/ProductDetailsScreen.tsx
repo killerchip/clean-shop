@@ -5,8 +5,8 @@ import { View } from "react-native";
 import { Image } from "expo-image";
 import { Text, Button } from "react-native-paper";
 import { CartIcon } from "../../components/CartIcon";
-import { PageScrollView } from "../../components/PageScrollView";
-import { PriceTagMedium } from "../../components/PriceTags";
+import { PageScrollView } from "../../components/atoms/PageScrollView";
+import { PriceTagMedium } from "../../components/atoms/PriceTags";
 import styled from "styled-components/native";
 
 const blurhash =

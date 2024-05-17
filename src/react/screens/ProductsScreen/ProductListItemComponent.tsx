@@ -2,7 +2,7 @@ import { ProductListItem } from "../../../presentation/products.views";
 import { Card, MD3Theme, withTheme } from "react-native-paper";
 import { Pressable, StyleProp, ViewStyle } from "react-native";
 import { useRouter } from "expo-router";
-import { PriceTag } from "../../components/PriceTags";
+import { PriceTag } from "../../components/atoms/PriceTags";
 import styled from "styled-components/native";
 
 type Props = {
@@ -22,7 +22,7 @@ export const ProductListItemComponent = function ProductListItem({
 
   return (
     <Pressable onPress={onPress}>
-      <ListItemCard>
+      <ListItemCard style={style}>
         <Card.Cover source={{ uri: product.image }} />
         <Card.Title title={product.title} titleVariant="titleLarge" />
         <ListItemContent>
