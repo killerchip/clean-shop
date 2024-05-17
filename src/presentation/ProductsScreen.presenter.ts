@@ -21,7 +21,6 @@ export class ProductsScreenPresenter {
     private _errorAlertingService: IErrorAlertingService,
   ) {
     makeAutoObservable(this);
-    this.loadProducts().then();
   }
 
   async loadProducts() {

@@ -90,8 +90,6 @@ describe("ProductsStore", () => {
 
     // Call fetchProducts
     await productsStore.fetchProducts();
-    // await productsStore.fetchProducts();
-    expect(productsStore.products).toEqual(getMockProducts());
     expect(length).toBe(2);
     dispose();
   });

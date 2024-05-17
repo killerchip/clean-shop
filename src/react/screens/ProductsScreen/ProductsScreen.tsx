@@ -9,7 +9,7 @@ import { ProductListItemComponent } from "./ProductListItemComponent";
 import { CartIcon } from "../../components/CartIcon";
 import { EmptyListComponent } from "./EmptyListComponent";
 import styled from "styled-components/native";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
 const renderItem: ListRenderItem<ProductListItem> = ({ item }) => {
   return <ProductListItemComponent product={item} />;
@@ -24,6 +24,10 @@ export const ProductsScreen = observer(function Root() {
     () => (isFirstFetch ? null : <EmptyListComponent />),
     [isFirstFetch],
   );
+
+  useEffect(() => {
+    presenter.loadProducts().then();
+  }, [presenter]);
 
   return (
     <>
