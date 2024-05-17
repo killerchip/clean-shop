@@ -1,21 +1,11 @@
-import { Container } from "inversify";
-import { ShopApi } from "../../dto/ShopApi";
-import { ProductsStore } from "../../domain/Products.store";
-import { CartStore } from "../../domain/Cart.store";
-import { ErrorReportingService } from "../../services/ErrorReportingService";
-import { ErrorAlertingService } from "../../services/ErrorAlertingService";
+import { BaseContainer } from "./baseContainer";
+import Axios from "axios";
+import { Injectables } from "./injectables";
 
-const container = new Container({
-  autoBindInjectable: true,
-  defaultScope: "Transient",
-});
+const container = new BaseContainer().buildBaseTemplate();
 
-// Stores and some gateways should be singletons
-container.bind(ShopApi).toSelf().inSingletonScope();
-container.bind(ProductsStore).toSelf().inSingletonScope();
-container.bind(CartStore).toSelf().inSingletonScope();
-container.bind(ErrorReportingService).toSelf().inSingletonScope();
-container.bind(ErrorAlertingService).toSelf().inSingletonScope();
+// Here bind the dependencies that should not be in the tests
+container.bind(Injectables.HttpClient).toConstantValue(Axios);
 
 export function getContainer() {
   return container;
