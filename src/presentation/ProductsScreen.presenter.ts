@@ -12,6 +12,7 @@ type IErrorAlertingService = Pick<ErrorAlertingService, "alert">;
 @injectable()
 export class ProductsScreenPresenter {
   isFetching = false;
+  isFirstFetch = true;
 
   constructor(
     @inject(ProductsStore) private _productsStore: IProductStore,
@@ -37,6 +38,7 @@ export class ProductsScreenPresenter {
     } finally {
       runInAction(() => {
         this.isFetching = false;
+        this.isFirstFetch = false;
       });
     }
   }

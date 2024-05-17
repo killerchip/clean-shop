@@ -9,16 +9,21 @@ import { ProductListItemComponent } from "./ProductListItemComponent";
 import { CartIcon } from "../../components/CartIcon";
 import { EmptyListComponent } from "./EmptyListComponent";
 import styled from "styled-components/native";
+import { useCallback } from "react";
+
+const renderItem: ListRenderItem<ProductListItem> = ({ item }) => {
+  return <ProductListItemComponent product={item} />;
+};
 
 export const ProductsScreen = observer(function Root() {
   const presenter = useNewDependency(ProductsScreenPresenter);
-  const { itemsInCart } = presenter;
-
-  const renderItem: ListRenderItem<ProductListItem> = ({ item }) => {
-    return <ProductListItemComponent product={item} />;
-  };
+  const { itemsInCart, isFirstFetch } = presenter;
 
   const onRefresh = () => presenter.loadProducts();
+  const OptionalEmptyListComponent = useCallback(
+    () => (isFirstFetch ? null : <EmptyListComponent />),
+    [isFirstFetch],
+  );
 
   return (
     <>
@@ -35,7 +40,7 @@ export const ProductsScreen = observer(function Root() {
           estimatedItemSize={282}
           refreshing={presenter.isFetching}
           onRefresh={onRefresh}
-          ListEmptyComponent={EmptyListComponent}
+          ListEmptyComponent={OptionalEmptyListComponent}
         />
       </Container>
     </>

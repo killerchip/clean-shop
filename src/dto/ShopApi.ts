@@ -14,8 +14,7 @@ export class ShopApi {
 
   async getProducts(): Promise<Product[]> {
     try {
-      // const response = await Axios.get(`${SHOP_API}/products/`);
-      const response = await Axios.get(`${SHOP_API}`);
+      const response = await Axios.get(`${SHOP_API}/products/`);
       return response.data.map(toProduct);
     } catch (error: unknown) {
       this._errorReportingService.reportError(error as Error).then();
