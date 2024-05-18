@@ -38,4 +38,9 @@ describe("CartIcon Component", () => {
     render(<CartIcon testID="cart-icon" />);
     expect(screen.queryByTestId("cart-icon-cart-badge")).toBeNull();
   });
+
+  it("matches snapshot", () => {
+    render(<CartIcon testID="cart-icon" itemsNumber={5} />);
+    expect(screen.toJSON()).toMatchSnapshot();
+  });
 });

@@ -4,11 +4,15 @@ import { Button, Text } from "react-native-paper";
 import styled from "styled-components/native";
 import * as Updates from "expo-updates";
 
-export function RootErrorBoundary({ error }: ErrorBoundaryProps) {
+type Props = Pick<ErrorBoundaryProps, "error"> & {
+  testID?: string;
+};
+
+export function RootErrorBoundary({ error, testID }: Props) {
   const reload = () => Updates.reloadAsync();
 
   return (
-    <Container>
+    <Container testID={testID}>
       <Text variant="displayMedium">Oops!</Text>
       <Text variant="titleMedium">Something went wrong:</Text>
       <Text>{error.message}</Text>

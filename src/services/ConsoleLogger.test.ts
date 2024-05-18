@@ -7,7 +7,7 @@ describe("ConsoleLogger", () => {
 
   beforeEach(() => {
     consoleLogger = new ConsoleLogger();
-    spyConsoleLog = jest.spyOn(console, "log");
+    spyConsoleLog = jest.spyOn(console, "log").mockImplementation();
   });
 
   afterEach(() => {
