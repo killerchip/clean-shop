@@ -28,23 +28,26 @@ export const ProductDetailsScreen = observer(function ProductsDetailsScreen() {
           headerRight: () => <CartIcon itemsNumber={itemsInCart} />,
         }}
       />
-      <PageScrollView>
-        <ProductDetailsImage
-          source={product?.image}
-          transition={100}
-          placeholder={{ blurhash }}
-        />
-        <TextContainer>
-          <Title variant="headlineMedium">{product?.title}</Title>
-          <ActionLine>
-            <PriceTagMedium>${product?.price}</PriceTagMedium>
-            <Button mode="contained" onPress={onCartPress} icon="cart">
-              Add To Cart
-            </Button>
-          </ActionLine>
-          <Description>{product?.description}</Description>
-        </TextContainer>
-      </PageScrollView>
+      {presenter.product === undefined && <View>Loading...</View>}
+      {presenter.product !== undefined && (
+        <PageScrollView>
+          <ProductDetailsImage
+            source={product?.image}
+            transition={100}
+            placeholder={{ blurhash }}
+          />
+          <TextContainer>
+            <Title variant="headlineMedium">{product?.title}</Title>
+            <ActionLine>
+              <PriceTagMedium>${product?.price}</PriceTagMedium>
+              <Button mode="contained" onPress={onCartPress} icon="cart">
+                Add To Cart
+              </Button>
+            </ActionLine>
+            <Description>{product?.description}</Description>
+          </TextContainer>
+        </PageScrollView>
+      )}
     </>
   );
 });

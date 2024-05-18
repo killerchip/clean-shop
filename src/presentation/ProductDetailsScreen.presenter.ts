@@ -35,10 +35,6 @@ export class ProductDetailsScreenPresenter {
   get itemsInCart() {
     return this._cartStore.items.length;
   }
-
-  get displayAddToCartButton() {
-    return Boolean(this.product);
-  }
 }
 
 export function useCreateProductDetailsScreenPresenter(

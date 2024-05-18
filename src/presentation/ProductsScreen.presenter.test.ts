@@ -133,17 +133,12 @@ describe("ProductsScreenPresenter", () => {
   });
 
   describe("productsList", () => {
-    it.only("should correctly transform products to list items", async () => {
-      const dispose = reaction(
-        () => presenter.productsList,
-        (productsList) => {},
-      );
+    it("should correctly transform products to list items", async () => {
       expect(presenter.productsList).toEqual([]);
       runInAction(() => {
         productsStore.products.push(...products);
       });
       expect(presenter.productsList).toEqual(listItems);
-      dispose();
     });
   });
 
