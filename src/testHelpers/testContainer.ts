@@ -1,11 +1,19 @@
 import { BaseContainer } from "../config/ioc/baseContainer";
 import { Injectables } from "../config/ioc/injectables";
-import { MockAxios } from "./MockAxios";
+import { getMockAxios } from "./MockAxios";
 
-export function getTestContainer() {
+const getDefaultConfig = () => ({
+  MockAxios: getMockAxios(),
+});
+
+export type TestContainerConfig = ReturnType<typeof getDefaultConfig>;
+
+export function getTestContainer(config: Partial<TestContainerConfig> = {}) {
   const container = new BaseContainer().buildBaseTemplate();
 
-  container.bind(Injectables.HttpClient).toConstantValue(new MockAxios());
+  const finalConfig = { ...getDefaultConfig(), ...config };
 
-  return container;
+  container.bind(Injectables.HttpClient).toConstantValue(finalConfig.MockAxios);
+
+  return { container, mocks: finalConfig };
 }

@@ -35,7 +35,7 @@ describe("ShopApi", () => {
 
   beforeEach(() => {
     // prepare container
-    container = getTestContainer();
+    ({ container } = getTestContainer());
     httpClient = container.get(Injectables.HttpClient);
     // prepare mocks
     httpClient.get = jest
