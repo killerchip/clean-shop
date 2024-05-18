@@ -28,6 +28,7 @@ export const ProductDetailsScreen = observer(function ProductsDetailsScreen() {
           headerRight: () => <CartIcon itemsNumber={itemsInCart} />,
         }}
       />
+      {/*TODO: make this 'loading' a bit more meaning-full*/}
       {presenter.product === undefined && <View>Loading...</View>}
       {presenter.product !== undefined && (
         <PageScrollView>
