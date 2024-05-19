@@ -9,6 +9,7 @@
     "web": "EXPO_PUBLIC_STAGE=DEV expo start --web",
     "lint": "eslint .",
     "format": "prettier . --write",
+    "prettier:check": "prettier . --check",
     "pre-commit": "pre-commit",
     "test": "jest",
     "postinstall": "husky install"
