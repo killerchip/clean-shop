@@ -67,7 +67,7 @@ describe("ShopApi", () => {
     // Test if getProducts calls `${SHOP_API}/products/`
     await shopApi.getProducts();
     expect(httpClient.get).toHaveBeenCalledWith(
-      `https://fakestoreapi.com/products/`,
+      `http://localhost:3000/products/`,
     );
   });
 
