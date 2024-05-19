@@ -26,7 +26,7 @@ export const ProductsScreen = observer(function Root() {
   );
 
   useEffect(() => {
-    presenter.loadProducts().then();
+    presenter.loadProducts();
   }, [presenter]);
 
   return (
@@ -39,6 +39,7 @@ export const ProductsScreen = observer(function Root() {
       />
       <Container>
         <FlashList
+          testID="products-list"
           renderItem={renderItem}
           data={presenter.productsList.slice()}
           estimatedItemSize={282}
