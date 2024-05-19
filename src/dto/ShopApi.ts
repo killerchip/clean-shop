@@ -24,7 +24,7 @@ export class ShopApi {
       );
       return response.data.map(toProduct);
     } catch (error: unknown) {
-      this._errorReportingService.reportError(error as Error).then();
+      this._errorReportingService.reportError(error).then();
       throw error;
     }
   }
