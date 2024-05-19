@@ -44,4 +44,4 @@ yarn-error.*
 !.yarn/versions
 
 .idea
-
+coverage
