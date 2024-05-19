@@ -2,9 +2,13 @@ import { View } from "react-native";
 import { Text } from "react-native-paper";
 import styled from "styled-components/native";
 
-export function EmptyListComponent() {
+type Props = {
+  testID?: string;
+};
+
+export function EmptyListComponent({ testID }: Props) {
   return (
-    <Container>
+    <Container testID={testID}>
       <Text variant="titleLarge">Nothing here :-(</Text>
       <Text variant="titleMedium">Pull to refresh</Text>
     </Container>
