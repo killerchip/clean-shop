@@ -14,6 +14,11 @@ export default function RootLayout() {
     <AppThemeProvider>
       <Stack />
       <StatusBar style="auto" />
+
+
+
+
+
     </AppThemeProvider>
   );
 }
