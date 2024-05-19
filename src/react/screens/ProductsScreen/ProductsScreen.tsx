@@ -10,6 +10,7 @@ import { CartIcon } from "../../components/CartIcon";
 import { EmptyListComponent } from "./EmptyListComponent";
 import styled from "styled-components/native";
 import { useCallback, useEffect } from "react";
+import { getStageMarker } from "../../../config/env";
 
 const renderItem: ListRenderItem<ProductListItem> = ({ item }) => {
   return <ProductListItemComponent product={item} />;
@@ -33,7 +34,7 @@ export const ProductsScreen = observer(function Root() {
     <>
       <Stack.Screen
         options={{
-          title: "Products",
+          title: "Products" + getStageMarker(),
           headerRight: () => <CartIcon itemsNumber={itemsInCart} />,
         }}
       />
