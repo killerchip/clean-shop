@@ -21,16 +21,16 @@ jobs:
           node-version: "20" # Specify the Node.js version you need
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Run ESLint
-        run: npm run lint
+        run: yarn lint
         # Assumes your ESLint script in package.json is "lint": "eslint ."
 
       - name: Run Prettier
-        run: npm run prettier:check
-        # Assumes your Prettier script in package.json is "prettier-check": "prettier --check ."
+        run: yarn prettier:check
+        # Assumes your Prettier script in package.json is "prettier:check": "prettier --check ."
 
       - name: Run tests
-        run: npm test
-        # Assumes your test script in package.json is "test": "your-test-command"
+        run: yarn test
+        # Assumes your test script in package.json is "test": "jest"
