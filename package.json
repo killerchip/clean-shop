@@ -61,6 +61,10 @@
   },
   "private": true,
   "lint-staged": {
-    "*": "yarn format"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*": "prettier --write"
   }
 }
