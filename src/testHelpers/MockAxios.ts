@@ -12,7 +12,8 @@ export function getMockProducts(): ProductDto[] {
       title: "Product 1",
       price: 100,
       description: "Description 1",
-      images: ["image1.jpg", "image2.jpg"],
+      image: "image1.jpg",
+      rating: { rate: 5, count: 100 },
       category: "category1",
     },
     {
@@ -20,7 +21,8 @@ export function getMockProducts(): ProductDto[] {
       title: "Product 2",
       price: 200,
       description: "Description 2",
-      images: ["image3.jpg", "image4.jpg"],
+      image: "image3.jpg",
+      rating: { rate: 5, count: 100 },
       category: "category2",
     },
   ];
