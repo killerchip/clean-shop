@@ -8,11 +8,13 @@ import styled from "styled-components/native";
 type Props = {
   product: ProductListItem;
   style?: StyleProp<ViewStyle>;
+  testID?: string;
 };
 
 export const ProductListItemComponent = function ProductListItem({
   product,
   style = {},
+  testID,
 }: Props) {
   const router = useRouter();
 
@@ -21,7 +23,7 @@ export const ProductListItemComponent = function ProductListItem({
   };
 
   return (
-    <Pressable onPress={onPress}>
+    <Pressable onPress={onPress} testID={`${testID}-pressable-area`}>
       <ListItemCard style={style}>
         <Card.Cover source={{ uri: product.image }} />
         <Card.Title title={product.title} titleVariant="titleLarge" />
