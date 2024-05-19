@@ -1,0 +1,390 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductDetailsScreen displays passes the snapshot test 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCSafeAreaView
+    edges={
+      {
+        "bottom": "additive",
+        "left": "additive",
+        "right": "additive",
+        "top": "additive",
+      }
+    }
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView
+      style={
+        {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        }
+      }
+    >
+      <View>
+        <ViewManagerAdapter_ExpoImage
+          contentFit="cover"
+          contentPosition={
+            {
+              "left": "50%",
+              "top": "50%",
+            }
+          }
+          height={250}
+          nativeViewRef={"[React.ref]"}
+          onError={[Function]}
+          onLoad={[Function]}
+          onLoadStart={[Function]}
+          onProgress={[Function]}
+          placeholder={
+            [
+              {
+                "height": 16,
+                "uri": "blurhash:/%7CrF%3FhV%252WCj%5Bayj%5Ba%7Cj%5Baz_NaeWBj@ayfRayfQfQM%7BM%7Cazj%5Bazf6fQfQfQIpWXofj%5Bayj%5Bj%5BfQayWCoeoeaya%7Dj%5BayfQa%7BoLj%3Fj%5BWVj%5Bayayj%5BfQoff7azayj%5Bayj%5Bj%5Bayofayayayj%5BfQj%5Bayayj%5Bayfjj%5Bj%5Bayjuayj%5B",
+                "width": 16,
+              },
+            ]
+          }
+          source={
+            [
+              {
+                "uri": "test-image-url",
+              },
+            ]
+          }
+          style={
+            {
+              "height": 250,
+              "width": "100%",
+            }
+          }
+          transition={
+            {
+              "duration": 100,
+            }
+          }
+          width="100%"
+        />
+        <View
+          style={
+            {
+              "paddingLeft": 20,
+              "paddingRight": 20,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "textAlign": "left",
+                },
+                {
+                  "color": "rgba(28, 27, 31, 1)",
+                  "writingDirection": "ltr",
+                },
+                [
+                  {
+                    "fontFamily": "System",
+                    "fontSize": 28,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 36,
+                  },
+                  {
+                    "fontWeight": "bold",
+                    "marginTop": 6,
+                    "paddingBottom": 10,
+                    "paddingTop": 10,
+                    "textAlign": "center",
+                  },
+                ],
+              ]
+            }
+          >
+            Test Product
+          </Text>
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "paddingBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                  },
+                  {
+                    "writingDirection": "ltr",
+                  },
+                  {
+                    "color": "rgba(103, 80, 164, 1)",
+                    "fontSize": 25,
+                  },
+                ]
+              }
+            >
+              $
+              100
+            </Text>
+            <View
+              collapsable={false}
+              style={
+                {
+                  "backgroundColor": "rgba(103, 80, 164, 1)",
+                  "borderRadius": 20,
+                  "shadowColor": "#000",
+                  "shadowOffset": {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0,
+                  "shadowRadius": 0,
+                }
+              }
+              testID="button-container-outer-layer"
+            >
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "backgroundColor": "rgba(103, 80, 164, 1)",
+                    "borderColor": "transparent",
+                    "borderRadius": 20,
+                    "borderStyle": "solid",
+                    "borderWidth": 0,
+                    "flex": undefined,
+                    "minWidth": 64,
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                  }
+                }
+                testID="button-container"
+              >
+                <View
+                  accessibilityRole="button"
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": false,
+                      "expanded": undefined,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    [
+                      {
+                        "overflow": "hidden",
+                      },
+                      {
+                        "borderRadius": 20,
+                      },
+                    ]
+                  }
+                  testID="button"
+                >
+                  <View
+                    style={
+                      [
+                        {
+                          "alignItems": "center",
+                          "flexDirection": "row",
+                          "justifyContent": "center",
+                        },
+                        undefined,
+                      ]
+                    }
+                  >
+                    <View
+                      style={
+                        [
+                          {
+                            "marginLeft": 12,
+                            "marginRight": -4,
+                          },
+                          {
+                            "marginLeft": 16,
+                            "marginRight": -16,
+                          },
+                          false,
+                        ]
+                      }
+                      testID="button-icon-container"
+                    >
+                      <Text
+                        accessibilityElementsHidden={true}
+                        allowFontScaling={false}
+                        importantForAccessibility="no-hide-descendants"
+                        pointerEvents="none"
+                        selectable={false}
+                        style={
+                          [
+                            {
+                              "color": "rgba(255, 255, 255, 1)",
+                              "fontSize": 18,
+                            },
+                            [
+                              {
+                                "lineHeight": 18,
+                                "transform": [
+                                  {
+                                    "scaleX": 1,
+                                  },
+                                ],
+                              },
+                              {
+                                "backgroundColor": "transparent",
+                              },
+                            ],
+                            {
+                              "fontFamily": "material-community",
+                              "fontStyle": "normal",
+                              "fontWeight": "normal",
+                            },
+                            {},
+                          ]
+                        }
+                      >
+                        󰄐
+                      </Text>
+                    </View>
+                    <Text
+                      numberOfLines={1}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "textAlign": "left",
+                          },
+                          {
+                            "color": "rgba(28, 27, 31, 1)",
+                            "writingDirection": "ltr",
+                          },
+                          [
+                            {
+                              "fontFamily": "System",
+                              "fontSize": 14,
+                              "fontWeight": "500",
+                              "letterSpacing": 0.1,
+                              "lineHeight": 20,
+                            },
+                            [
+                              {
+                                "marginHorizontal": 16,
+                                "marginVertical": 9,
+                                "textAlign": "center",
+                              },
+                              false,
+                              {
+                                "marginHorizontal": 24,
+                                "marginVertical": 10,
+                              },
+                              undefined,
+                              false,
+                              {
+                                "color": "rgba(255, 255, 255, 1)",
+                                "fontFamily": "System",
+                                "fontSize": 14,
+                                "fontWeight": "500",
+                                "letterSpacing": 0.1,
+                                "lineHeight": 20,
+                              },
+                              undefined,
+                            ],
+                          ],
+                        ]
+                      }
+                      testID="button-text"
+                    >
+                      Add To Cart
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "textAlign": "left",
+                },
+                {
+                  "color": "rgba(28, 27, 31, 1)",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "letterSpacing": 0,
+                },
+                {
+                  "writingDirection": "ltr",
+                },
+                {
+                  "fontSize": 16,
+                  "fontStyle": "italic",
+                  "paddingTop": 10,
+                },
+              ]
+            }
+          >
+            Test Description
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </RNCSafeAreaView>
+</RNCSafeAreaProvider>
+`;

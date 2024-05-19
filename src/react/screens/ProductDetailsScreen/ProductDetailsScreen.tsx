@@ -28,8 +28,11 @@ export const ProductDetailsScreen = observer(function ProductsDetailsScreen() {
           headerRight: () => <CartIcon itemsNumber={itemsInCart} />,
         }}
       />
-      {/*TODO: make this 'loading' a bit more meaning-full*/}
-      {presenter.product === undefined && <View>Loading...</View>}
+      {presenter.product === undefined && (
+        <OopsContainer>
+          <Text>Oops! No product found</Text>
+        </OopsContainer>
+      )}
       {presenter.product !== undefined && (
         <PageScrollView>
           <ProductDetailsImage
@@ -83,4 +86,10 @@ const Description = styled(Text)`
 const TextContainer = styled(View)`
   padding-left: 20px;
   padding-right: 20px;
+`;
+
+const OopsContainer = styled(View)`
+  flex: 1;
+  justify-content: center;
+  align-items: baseline;
 `;
