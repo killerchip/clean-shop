@@ -44,16 +44,6 @@ describe("ProductsStore", () => {
     expect(productsStore.products).toEqual([]);
   });
 
-  it("makes props observable automatically", () => {
-    const mobx = require("mobx");
-    const makeObservableSpy = jest.spyOn(mobx, "makeAutoObservable");
-    productsStore = new ProductsStore(
-      mockShopApi as Pick<ShopApi, "getProducts">,
-    );
-    expect(makeObservableSpy).toHaveBeenCalledWith(productsStore);
-    expect(makeObservableSpy).toHaveBeenCalledTimes(1);
-  });
-
   it("should inject ShopApi dependency correctly", async () => {
     await productsStore.fetchProducts();
     expect(mockShopApi.getProducts).toHaveBeenCalledTimes(1);

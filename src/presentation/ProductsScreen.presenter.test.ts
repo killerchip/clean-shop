@@ -66,7 +66,9 @@ describe("ProductsScreenPresenter", () => {
       it("should set isFetching correctly", async () => {
         expect(presenter.productsList).toEqual([]);
         expect(presenter.isFetching).toBe(false);
+
         const isFetchingValues: boolean[] = [];
+
         const dispose = reaction(
           () => presenter.isFetching,
           (isFetching) => {
@@ -74,6 +76,7 @@ describe("ProductsScreenPresenter", () => {
           },
         );
         await presenter.loadProducts();
+
         expect(isFetchingValues).toEqual([true, false]);
         dispose();
       });
