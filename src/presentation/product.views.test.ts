@@ -1,5 +1,5 @@
 import { toProductListItem } from "./products.views";
-import { Product } from "../domain/products.types";
+import { Product } from "@/domain/products.types";
 
 describe("Product View Models", () => {
   const sampleProduct: Product = {

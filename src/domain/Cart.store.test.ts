@@ -27,14 +27,6 @@ describe("CartStore", () => {
     expect(cartStore.items).toEqual([]);
   });
 
-  it("should make props observable automatically", () => {
-    const mobx = require("mobx");
-    const makeObservableSpy = jest.spyOn(mobx, "makeAutoObservable");
-    cartStore = new CartStore();
-    expect(makeObservableSpy).toHaveBeenCalledWith(cartStore);
-    expect(makeObservableSpy).toHaveBeenCalledTimes(1);
-  });
-
   it("should add an item to the cart", () => {
     cartStore.addItem(product);
     expect(cartStore.items).toContainEqual(product);

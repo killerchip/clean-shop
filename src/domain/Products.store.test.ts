@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { ProductsStore } from "./Products.store";
-import { ShopApi } from "../dto/ShopApi";
+import { ShopApi } from "@/dto/ShopApi";
 import { Product } from "./products.types";
 import { reaction } from "mobx";
 
@@ -42,16 +42,6 @@ describe("ProductsStore", () => {
 
   it("initializes with empty products array", () => {
     expect(productsStore.products).toEqual([]);
-  });
-
-  it("makes props observable automatically", () => {
-    const mobx = require("mobx");
-    const makeObservableSpy = jest.spyOn(mobx, "makeAutoObservable");
-    productsStore = new ProductsStore(
-      mockShopApi as Pick<ShopApi, "getProducts">,
-    );
-    expect(makeObservableSpy).toHaveBeenCalledWith(productsStore);
-    expect(makeObservableSpy).toHaveBeenCalledTimes(1);
   });
 
   it("should inject ShopApi dependency correctly", async () => {

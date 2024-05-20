@@ -6,6 +6,7 @@ import {
 import { DefaultTheme } from "@react-navigation/native";
 
 // see : https://callstack.github.io/react-native-paper/docs/guides/theming
+// define you theme colors here
 const customLightColors = {
   colors: {
     primary: "rgb(109, 35, 249)",

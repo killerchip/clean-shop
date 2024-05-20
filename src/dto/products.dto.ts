@@ -1,4 +1,4 @@
-import { Product } from "../domain/products.types";
+import { Product } from "@/domain/products.types";
 
 export type ProductDto = {
   id: number;

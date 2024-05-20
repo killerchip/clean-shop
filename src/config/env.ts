@@ -5,6 +5,10 @@ type EnvironmentVars = {
   SHOP_API: string;
 };
 
+// if you wish to remove a variable from the checked-in code,
+// then assign it from process.env.EXPO_PUBLIC_*
+// but make sure it is defined on the stages you are using it
+
 const environments: Record<string, EnvironmentVars> = {
   PROD: {
     STAGE: "PROD",

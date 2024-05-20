@@ -1,9 +1,9 @@
 import { Container } from "inversify";
-import { ShopApi } from "../../dto/ShopApi";
-import { ProductsStore } from "../../domain/Products.store";
-import { CartStore } from "../../domain/Cart.store";
-import { ErrorReportingService } from "../../services/ErrorReportingService";
-import { ErrorAlertingService } from "../../services/ErrorAlertingService";
+import { ShopApi } from "@/dto/ShopApi";
+import { ProductsStore } from "@/domain/Products.store";
+import { CartStore } from "@/domain/Cart.store";
+import { ErrorReportingService } from "@/services/ErrorReportingService";
+import { ErrorAlertingService } from "@/services/ErrorAlertingService";
 
 export class BaseContainer {
   container;
@@ -17,6 +17,7 @@ export class BaseContainer {
 
   buildBaseTemplate = () => {
     // Here we bind classes and services in Singleton scope.
+    // Typically services and global state.
     this.container.bind(ShopApi).toSelf().inSingletonScope();
     this.container.bind(ProductsStore).toSelf().inSingletonScope();
     this.container.bind(CartStore).toSelf().inSingletonScope();
