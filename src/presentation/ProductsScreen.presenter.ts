@@ -1,9 +1,9 @@
 import { inject, injectable } from "inversify";
-import { ProductsStore } from "../domain/Products.store";
+import { ProductsStore } from "@/domain/Products.store";
 import { makeAutoObservable, runInAction } from "mobx";
 import { toProductListItem } from "./products.views";
-import { CartStore } from "../domain/Cart.store";
-import { ErrorAlertingService } from "../services/ErrorAlertingService";
+import { CartStore } from "@/domain/Cart.store";
+import { ErrorAlertingService } from "@/services/ErrorAlertingService";
 
 type IProductStore = Pick<ProductsStore, "products" | "fetchProducts">;
 type ICartStore = Pick<CartStore, "items">;

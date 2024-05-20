@@ -1,8 +1,9 @@
 import "reflect-metadata";
 import { fireEvent, screen } from "@testing-library/react-native";
 import { ProductDetailsScreen } from "./ProductDetailsScreen";
-import { useCreateProductDetailsScreenPresenter } from "../../../presentation/ProductDetailsScreen.presenter";
+import { useCreateProductDetailsScreenPresenter } from "@/presentation/ProductDetailsScreen.presenter";
 import { renderRouter } from "expo-router/testing-library";
+import { useLocalSearchParams } from "expo-router";
 
 // TODO: fix the warning error on console. https://github.com/expo/expo/issues/28831
 
@@ -10,6 +11,14 @@ jest.mock("../../../presentation/ProductDetailsScreen.presenter");
 // mock non existing modules
 jest.mock("react-native-reanimated", () => null, {
   virtual: true,
+});
+
+jest.mock("expo-router", () => {
+  const original = jest.requireActual("expo-router"); // Step 2.
+  return {
+    ...original,
+    useLocalSearchParams: jest.fn(),
+  };
 });
 
 describe("ProductDetailsScreen", () => {
@@ -31,10 +40,25 @@ describe("ProductDetailsScreen", () => {
     });
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it("instantiates the presenter with the correct id", () => {
+    (useLocalSearchParams as jest.Mock).mockImplementation(() => ({ id: "1" }));
+    renderRouter(
+      {
+        "/product/1": MockComponent,
+      },
+      { initialUrl: "/product/1" },
+    );
+
+    expect(useCreateProductDetailsScreenPresenter).toHaveBeenCalledWith(1);
+  });
+
   it("displays product details when product is available", () => {
     renderRouter(
       {
-        index: MockComponent,
         "/product/1": MockComponent,
       },
       { initialUrl: "/product/1" },

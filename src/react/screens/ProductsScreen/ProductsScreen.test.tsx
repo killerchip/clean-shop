@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { ProductsScreen } from "./ProductsScreen";
 import { renderRouter, screen } from "expo-router/testing-library";
-import { useNewDependency } from "../../../config/ioc/useDependency.react";
+import { useNewDependency } from "@/config/ioc/useDependency.react";
 
 jest.mock("../../../config/ioc/useDependency.react");
 jest.mock("react-native-reanimated", () => null, {

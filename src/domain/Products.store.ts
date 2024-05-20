@@ -1,5 +1,5 @@
 import { inject, injectable } from "inversify";
-import { ShopApi } from "../dto/ShopApi";
+import { ShopApi } from "@/dto/ShopApi";
 import { Product } from "./products.types";
 import { makeAutoObservable, runInAction } from "mobx";
 
@@ -15,6 +15,7 @@ export class ProductsStore {
 
   async fetchProducts() {
     const products = await this._productsApi.getProducts();
+
     runInAction(() => {
       this.products = products;
     });

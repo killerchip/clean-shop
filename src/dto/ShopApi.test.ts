@@ -1,11 +1,11 @@
 import "reflect-metadata";
 import { Container } from "inversify";
-import { getTestContainer } from "../testHelpers/testContainer";
+import { getTestContainer } from "@/testHelpers/testContainer";
 import { ShopApi } from "./ShopApi";
 import Axios from "axios";
-import { Injectables } from "../config/ioc/injectables";
+import { Injectables } from "@/config/ioc/injectables";
 import { ProductDto } from "./products.dto";
-import { ErrorReportingService } from "../services/ErrorReportingService";
+import { ErrorReportingService } from "@/services/ErrorReportingService";
 
 function getMockProductData(): ProductDto[] {
   return [
@@ -67,7 +67,7 @@ describe("ShopApi", () => {
     // Test if getProducts calls `${SHOP_API}/products/`
     await shopApi.getProducts();
     expect(httpClient.get).toHaveBeenCalledWith(
-      `https://fakestoreapi.com/products/`,
+      `http://localhost:3000/products/`,
     );
   });
 
