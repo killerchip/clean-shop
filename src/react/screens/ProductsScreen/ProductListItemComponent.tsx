@@ -1,4 +1,4 @@
-import { ProductListItem } from "../../../presentation/products.views";
+import { ProductListItem } from "@/presentation/products.views";
 import { Card, MD3Theme, withTheme } from "react-native-paper";
 import { Pressable, StyleProp, ViewStyle } from "react-native";
 import { useRouter } from "expo-router";
@@ -18,9 +18,7 @@ export const ProductListItemComponent = function ProductListItem({
 }: Props) {
   const router = useRouter();
 
-  const onPress = () => {
-    router.push({ pathname: `/product/${product.id}` });
-  };
+  const onPress = () => router.push({ pathname: `/product/${product.id}` });
 
   return (
     <Pressable onPress={onPress} testID={`${testID}-pressable-area`}>

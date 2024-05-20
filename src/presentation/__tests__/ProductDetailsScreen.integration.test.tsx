@@ -1,8 +1,8 @@
 import "reflect-metadata";
 import { Container } from "inversify";
-import { getTestContainer } from "../../testHelpers/testContainer";
+import { getTestContainer } from "@/testHelpers/testContainer";
 import { ProductDetailsScreenPresenter } from "../ProductDetailsScreen.presenter";
-import { ProductsStore } from "../../domain/Products.store";
+import { ProductsStore } from "@/domain/Products.store";
 
 describe("ProductDetailsScreen", () => {
   let container: Container;

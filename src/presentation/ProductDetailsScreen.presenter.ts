@@ -1,10 +1,10 @@
 import { inject, injectable } from "inversify";
-import { ProductsStore } from "../domain/Products.store";
+import { ProductsStore } from "@/domain/Products.store";
 import { action, makeAutoObservable } from "mobx";
-import { Product } from "../domain/products.types";
+import { Product } from "@/domain/products.types";
 import { ProductDetails } from "./products.views";
-import { useNewDependency } from "../config/ioc/useDependency.react";
-import { CartStore } from "../domain/Cart.store";
+import { useNewDependency } from "@/config/ioc/useDependency.react";
+import { CartStore } from "@/domain/Cart.store";
 
 type IProductStore = Pick<ProductsStore, "products">;
 type ICartStore = Pick<CartStore, "addItem" | "items">;
