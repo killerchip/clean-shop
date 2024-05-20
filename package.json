@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "expo-router/entry",
   "scripts": {
-
     "start": "EXPO_PUBLIC_STAGE=DEV expo start -g",
     "android": "EXPO_PUBLIC_STAGE=DEV expo run:android",
     "ios": "EXPO_PUBLIC_STAGE=DEV expo run:ios",

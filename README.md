@@ -120,5 +120,6 @@ We use tests that can test the logic of all the 3 layers (presentation, business
 
 1. Build an iOS dev client: `yarn build:dev-client` (build once and you can reuse)
 2. Install dev-client to an `IPhone 15` simulator (unpack tar.gz and drag .app folder on simulator)
-3. Copy the `cleanshop.app` folder under `builds/ios/debug/cleanshop.app`
-4. run `yarn test:e2e`
+3. Start it: `yarn start`
+4. Copy the `cleanshop.app` folder under `builds/ios/debug/cleanshop.app`
+5. run `yarn test:e2e`
