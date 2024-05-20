@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { Stack, useLocalSearchParams } from "expo-router";
-import { useCreateProductDetailsScreenPresenter } from "../../../presentation/ProductDetailsScreen.presenter";
+import { useCreateProductDetailsScreenPresenter } from "@/presentation/ProductDetailsScreen.presenter";
 import { View } from "react-native";
 import { Image } from "expo-image";
 import { Text, Button } from "react-native-paper";

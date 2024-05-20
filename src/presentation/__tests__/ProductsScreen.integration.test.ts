@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { Container } from "inversify";
-import { getTestContainer } from "../../testHelpers/testContainer";
+import { getTestContainer } from "@/testHelpers/testContainer";
 import { Alert } from "react-native";
 import { ProductsScreenPresenter } from "../ProductsScreen.presenter";
 import { reaction } from "mobx";
@@ -8,8 +8,8 @@ import {
   getExampleAxiosError,
   getMockAxios,
   getMockProducts,
-} from "../../testHelpers/MockAxios";
-import { CartStore } from "../../domain/Cart.store";
+} from "@/testHelpers/MockAxios";
+import { CartStore } from "@/domain/Cart.store";
 
 describe("ProductsScreen", () => {
   let container: Container;

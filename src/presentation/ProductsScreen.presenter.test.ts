@@ -1,9 +1,9 @@
 import "reflect-metadata";
 import { ProductsScreenPresenter } from "./ProductsScreen.presenter";
-import { ProductsStore } from "../domain/Products.store";
-import { CartStore } from "../domain/Cart.store";
-import { ErrorAlertingService } from "../services/ErrorAlertingService";
-import { Product } from "../domain/products.types";
+import { ProductsStore } from "@/domain/Products.store";
+import { CartStore } from "@/domain/Cart.store";
+import { ErrorAlertingService } from "@/services/ErrorAlertingService";
+import { Product } from "@/domain/products.types";
 import { ProductListItem, toProductListItem } from "./products.views";
 import { observable, reaction, runInAction } from "mobx";
 

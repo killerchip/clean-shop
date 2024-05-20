@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { fireEvent, screen } from "@testing-library/react-native";
 import { ProductDetailsScreen } from "./ProductDetailsScreen";
-import { useCreateProductDetailsScreenPresenter } from "../../../presentation/ProductDetailsScreen.presenter";
+import { useCreateProductDetailsScreenPresenter } from "@/presentation/ProductDetailsScreen.presenter";
 import { renderRouter } from "expo-router/testing-library";
 
 // TODO: fix the warning error on console. https://github.com/expo/expo/issues/28831

@@ -1,5 +1,5 @@
 import { inject, injectable } from "inversify";
-import { ShopApi } from "../dto/ShopApi";
+import { ShopApi } from "@/dto/ShopApi";
 import { Product } from "./products.types";
 import { makeAutoObservable, runInAction } from "mobx";
 

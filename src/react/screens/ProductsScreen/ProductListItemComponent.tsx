@@ -1,4 +1,4 @@
-import { ProductListItem } from "../../../presentation/products.views";
+import { ProductListItem } from "@/presentation/products.views";
 import { Card, MD3Theme, withTheme } from "react-native-paper";
 import { Pressable, StyleProp, ViewStyle } from "react-native";
 import { useRouter } from "expo-router";

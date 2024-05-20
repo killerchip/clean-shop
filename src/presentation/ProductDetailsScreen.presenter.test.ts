@@ -1,8 +1,8 @@
 import "reflect-metadata";
 import { ProductDetailsScreenPresenter } from "./ProductDetailsScreen.presenter";
-import { ProductsStore } from "../domain/Products.store";
-import { CartStore } from "../domain/Cart.store";
-import { Product } from "../domain/products.types";
+import { ProductsStore } from "@/domain/Products.store";
+import { CartStore } from "@/domain/Cart.store";
+import { Product } from "@/domain/products.types";
 import { makeObservable, reaction, runInAction } from "mobx";
 
 describe("ProductDetailsScreenPresenter", () => {

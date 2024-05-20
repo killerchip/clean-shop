@@ -1,16 +1,16 @@
 import { View } from "react-native";
 import { observer } from "mobx-react-lite";
 import { Stack } from "expo-router";
-import { useNewDependency } from "../../../config/ioc/useDependency.react";
-import { ProductsScreenPresenter } from "../../../presentation/ProductsScreen.presenter";
+import { useNewDependency } from "@/config/ioc/useDependency.react";
+import { ProductsScreenPresenter } from "@/presentation/ProductsScreen.presenter";
 import { FlashList, ListRenderItem } from "@shopify/flash-list";
-import { ProductListItem } from "../../../presentation/products.views";
+import { ProductListItem } from "@/presentation/products.views";
 import { ProductListItemComponent } from "./ProductListItemComponent";
 import { CartIcon } from "../../components/CartIcon";
 import { EmptyListComponent } from "./EmptyListComponent";
 import styled from "styled-components/native";
 import { useCallback, useEffect } from "react";
-import { getStageMarker } from "../../../config/env";
+import { getStageMarker } from "@/config/env";
 
 const renderItem: ListRenderItem<ProductListItem> = ({ item }) => {
   return <ProductListItemComponent product={item} />;

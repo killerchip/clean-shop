@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { ProductsStore } from "./Products.store";
-import { ShopApi } from "../dto/ShopApi";
+import { ShopApi } from "@/dto/ShopApi";
 import { Product } from "./products.types";
 import { reaction } from "mobx";
 

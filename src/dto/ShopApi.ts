@@ -1,11 +1,11 @@
 import { inject, injectable } from "inversify";
-import { Product } from "../domain/products.types";
+import { Product } from "@/domain/products.types";
 import { toProduct } from "./products.dto";
-import { environment } from "../config/env";
+import { environment } from "@/config/env";
 import Axios from "axios";
-import { ErrorReportingService } from "../services/ErrorReportingService";
+import { ErrorReportingService } from "@/services/ErrorReportingService";
 
-import { Injectables } from "../config/ioc/injectables";
+import { Injectables } from "@/config/ioc/injectables";
 
 type IErrorReportingService = Pick<ErrorReportingService, "reportError">;
 

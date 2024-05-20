@@ -1,4 +1,4 @@
-import { ProductDto } from "../dto/products.dto";
+import { ProductDto } from "@/dto/products.dto";
 
 export type Product = Pick<
   ProductDto,
