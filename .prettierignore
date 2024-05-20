@@ -5,3 +5,4 @@ yarn-error.log
 **/*.hbs
 yarn.lock
 .prettierignore
+.gitignore

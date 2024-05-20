@@ -114,4 +114,12 @@ We use unit tests, for classes, functions, UI components, and screens.
 **Integration Tests**
 We use tests that can test the logic of all the 3 layers (presentation, business, dto) altogether. Tests assume the role of UI, and we mock any external libraries (like Axios). This allows testing our whole state management logic as a whole, which is faster and simpler than involving UI tests.
 
-E2E Tests (_TO DO_)
+## E2E Tests (WIP)
+
+### Run E2E tests - locally on iOS - development mode
+
+1. Build an iOS dev client: `yarn build:dev-client` (build once and you can reuse)
+2. Install dev-client to an `IPhone 15` simulator (unpack tar.gz and drag .app folder on simulator)
+3. Start it: `yarn start`
+4. Copy the `cleanshop.app` folder under `builds/ios/debug/cleanshop.app`
+5. run `yarn test:e2e`

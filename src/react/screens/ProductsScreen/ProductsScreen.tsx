@@ -13,7 +13,9 @@ import { useCallback, useEffect } from "react";
 import { getStageMarker } from "@/config/env";
 
 const renderItem: ListRenderItem<ProductListItem> = ({ item }) => {
-  return <ProductListItemComponent product={item} />;
+  return (
+    <ProductListItemComponent product={item} testID={`product-id-${item.id}`} />
+  );
 };
 
 export const ProductsScreen = observer(function Root() {
