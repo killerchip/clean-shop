@@ -15,6 +15,7 @@ export class ProductsStore {
 
   async fetchProducts() {
     const products = await this._productsApi.getProducts();
+
     runInAction(() => {
       this.products = products;
     });

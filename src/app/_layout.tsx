@@ -3,7 +3,7 @@
 import "reflect-metadata";
 import "../config/mobx";
 import { StatusBar } from "expo-status-bar";
-import { AppThemeProvider } from "@/config/theme/ThemeProvider";
+import { AppThemeProvider } from "@/config/theme/AppThemeProvider";
 import { RootErrorBoundary } from "@/react/components/RootErrorBoundary";
 import { Stack } from "expo-router";
 

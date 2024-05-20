@@ -5,6 +5,7 @@ import { makeAutoObservable } from "mobx";
 @injectable()
 export class CartStore {
   items: Product[] = [];
+
   constructor() {
     makeAutoObservable(this);
   }

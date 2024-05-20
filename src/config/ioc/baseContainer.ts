@@ -17,6 +17,7 @@ export class BaseContainer {
 
   buildBaseTemplate = () => {
     // Here we bind classes and services in Singleton scope.
+    // Typically services and global state.
     this.container.bind(ShopApi).toSelf().inSingletonScope();
     this.container.bind(ProductsStore).toSelf().inSingletonScope();
     this.container.bind(CartStore).toSelf().inSingletonScope();

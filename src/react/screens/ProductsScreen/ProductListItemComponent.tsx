@@ -18,9 +18,7 @@ export const ProductListItemComponent = function ProductListItem({
 }: Props) {
   const router = useRouter();
 
-  const onPress = () => {
-    router.push({ pathname: `/product/${product.id}` });
-  };
+  const onPress = () => router.push({ pathname: `/product/${product.id}` });
 
   return (
     <Pressable onPress={onPress} testID={`${testID}-pressable-area`}>

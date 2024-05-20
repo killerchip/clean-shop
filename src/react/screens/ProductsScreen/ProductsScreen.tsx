@@ -34,7 +34,7 @@ export const ProductsScreen = observer(function Root() {
     <>
       <Stack.Screen
         options={{
-          title: "Products" + getStageMarker(),
+          title: "Products" + getStageMarker(), // stage marker should not be presenter in PROD
           headerRight: () => <CartIcon itemsNumber={itemsInCart} />,
         }}
       />

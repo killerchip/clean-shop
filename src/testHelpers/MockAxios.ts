@@ -63,6 +63,7 @@ export type MockAxiosOptions = {
 export function getMockAxios(MockAxiosOptions: MockAxiosOptions = {}) {
   const axios: typeof Axios = jest.createMockFromModule("axios");
 
+  // by default resolve with mock products
   if (MockAxiosOptions.get?.rejects) {
     axios.get = jest
       .fn()

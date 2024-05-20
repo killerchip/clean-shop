@@ -3,11 +3,12 @@ import { Stack, useLocalSearchParams } from "expo-router";
 import { useCreateProductDetailsScreenPresenter } from "@/presentation/ProductDetailsScreen.presenter";
 import { View } from "react-native";
 import { Image } from "expo-image";
-import { Text, Button } from "react-native-paper";
+import { Button, Text } from "react-native-paper";
 import { CartIcon } from "../../components/CartIcon";
 import { PageScrollView } from "../../components/atoms/PageScrollView";
 import { PriceTagMedium } from "../../components/atoms/PriceTags";
 import styled from "styled-components/native";
+import { NoProductFound } from "@/react/screens/ProductDetailsScreen/NoProductFound";
 
 const blurhash =
   "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
@@ -28,11 +29,7 @@ export const ProductDetailsScreen = observer(function ProductsDetailsScreen() {
           headerRight: () => <CartIcon itemsNumber={itemsInCart} />,
         }}
       />
-      {presenter.product === undefined && (
-        <OopsContainer>
-          <Text>Oops! No product found</Text>
-        </OopsContainer>
-      )}
+      {presenter.product === undefined && <NoProductFound />}
       {presenter.product !== undefined && (
         <PageScrollView>
           <ProductDetailsImage
@@ -86,10 +83,4 @@ const Description = styled(Text)`
 const TextContainer = styled(View)`
   padding-left: 20px;
   padding-right: 20px;
-`;
-
-const OopsContainer = styled(View)`
-  flex: 1;
-  justify-content: center;
-  align-items: baseline;
 `;
