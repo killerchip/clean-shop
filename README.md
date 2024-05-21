@@ -118,12 +118,8 @@ We use tests that can test the logic of all the 3 layers (presentation, business
 
 ### Run E2E tests - locally on iOS - development mode
 
-1. Build an iOS dev client: `yarn build:dev-client` (build once and you can reuse
-2. Copy the `cleanshop.app` folder under `builds/ios/debug/cleanshop.app`
-3. Install dev-client to an `IPhone 15` simulator (unpack tar.gz and drag .app folder on simulator)
-
-Each time we want to run the e2e tests:
-
-1. `yarn test:start`
-2. Start the dev-client on iOS and wait for the app to load
-3. run `yarn test:e2e`
+1. Build an iOS dev client: `yarn build:dev-client` (build once and you can reuse)
+2. Install dev-client to an `IPhone 15` simulator (unpack tar.gz and drag .app folder on simulator)
+3. Start it: `yarn start`
+4. Copy the `cleanshop.app` folder under `builds/ios/debug/cleanshop.app`
+5. run `yarn test:e2e`
