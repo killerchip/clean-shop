@@ -12,6 +12,7 @@
     "prettier:check": "prettier . --check",
     "pre-commit": "pre-commit",
     "test": "jest src",
+    "test:start": "EXPO_PUBLIC_STAGE=DEV expo start --dev-client",
     "test:e2e": "detox test --configuration ios.sim.debug --reuse",
     "build:dev-client": "EXPO_PUBLIC_STAGE=DEV eas build --profile development-simulator --platform ios --local",
     "postinstall": "husky install"
@@ -72,6 +73,6 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*": "prettier --write"
+    "*.{json, html, css, md, yml}": "prettier --write"
   }
 }
